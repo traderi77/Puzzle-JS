@@ -12,9 +12,9 @@ namespace
 
 /*
 * Each subsquare in this larger square
-* represents an infinitely small hypothetical starting
+* represents an infinitely small starting
 * position for a line to be drawn in this square
-* The side length of this square is X.
+* Side length = x
 *  _ _ _ _ _ _ _ _
 * |_|_|_|_|_|_|_|_|
 * |_|_|_|_|_|_|_|_|
@@ -24,7 +24,7 @@ namespace
 * |_|_|_|_|_|_|_|_|
 *
 *
-* Given symmetry, we only need to focus on the an lines
+* Given symmetry, we only need to focus on the lines
 * stretching up to 90 degrees from the X-axis.
 */
 
@@ -38,7 +38,7 @@ namespace
  * In other words (sqrt((2X)^2 + X^2)).
  *
  *
- * On second thought, you can actually do up to X * sqrt(2)
+ * You can actually do up to X * sqrt(2)
  * since this represents the hypotenues of a single diagonal
  * across a square. Any line longer than this will not only
  * be guaranteed to cross exactly one line no matter where we station
