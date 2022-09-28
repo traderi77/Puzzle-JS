@@ -6,7 +6,7 @@
 
 namespace
 {
-    const unsigned NUMBER_OF_TRIALS = 10'000;
+    const unsigned tests = 10'000;
 }
 
 
@@ -85,7 +85,7 @@ std::tuple<float, float> MaxProbabilityOfCrossingExactlyOneLine()
     for (float startingLength{}; startingLength < 1 * std::sqrt(2); startingLength += 0.001)
     {
         int timesOnlyOneLineCrosses{};
-        for (unsigned trialCount{}; trialCount < NUMBER_OF_TRIALS; ++trialCount)
+        for (unsigned trialCount{}; trialCount < tests; ++trialCount)
         {
             if (IsLineOnOneGridLine(RandomNumber(uniformDist), RandomNumber(uniformDist),
                 startingLength, RandomNumber(uniformDist) * M_PI / 4))
@@ -95,7 +95,7 @@ std::tuple<float, float> MaxProbabilityOfCrossingExactlyOneLine()
         }
 
         // The probability a line of length startingLength crosses exactly one line.
-        float probabilityOfCrossing = timesOnlyOneLineCrosses / static_cast<float>(NUMBER_OF_TRIALS);
+        float probabilityOfCrossing = timesOnlyOneLineCrosses / static_cast<float>(tests);
 
         if (probabilityOfCrossing > maximumProbability)
         {
